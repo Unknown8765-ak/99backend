@@ -31,7 +31,7 @@ import authRoutes from "./routes/auth.routes.js";
 import categoryRoutes from "./routes/category.route.js";
 import uploadRoutes from "./routes/upload.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
-import addressRoutes from "./routes/address.routes.js";
+// import addressRoutes from "./routes/address.routes.js";
 import orderRoutes from "./routes/order.routes.js";
 import productRoutes from "./routes/product.routes.js";
 
@@ -40,7 +40,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/categories", categoryRoutes);
 app.use("/api/v1/uploads", uploadRoutes);
 app.use("/api/v1/cart", cartRoutes);
-app.use("/api/v1/addresses", addressRoutes);
+// app.use("/api/v1/addresses", addressRoutes);
 app.use("/api/v1/orders", orderRoutes);
 app.use("/api/v1/products", productRoutes);
 
