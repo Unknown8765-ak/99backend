@@ -1,12 +1,12 @@
-import  type{ Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import ApiError from "../utils/ApiError.js";
 
-interface AuthRequest extends Request {
+type AuthRequest = Omit<Request, "user"> & {
   user?: {
     id: string;
   };
-}
+};
 
 const authMiddleware = (
   req: AuthRequest,
