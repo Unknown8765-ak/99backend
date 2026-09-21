@@ -1,18 +1,18 @@
 import "./config/env.js";
 import dbConnection from "./db/index.js";
-import { app } from "./app.js"
+import { app } from "./app.js";
 
+const PORT = Number(process.env.PORT) || 8000;
 
-
-const PORT = process.env.PORT || 8000;
-console.log("PORT",PORT)
+console.log("PORT:", PORT);
 
 dbConnection()
-    .then(()=>{
-        app.listen(PORT ,()=>{
-            console.log(`server is running on Port ${process.env.PORT || 5000}`)
-        })
-    })
-    .catch((error)=>{
-        console.log("mongoose connection error" , error);
-    })
+  .then(() => {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server is running on Port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Mongoose connection error:", error);
+    process.exit(1);
+  });
